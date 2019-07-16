@@ -1,0 +1,13 @@
+in phpmyadmin
+create new database 
+us ka name "crud" rakh lay.
+us main "users" k name ka table bnaye 
+or us main ye data add krna ha
+"id"
+'first_name'
+'last_name'
+'mobile_no'
+'email'
+'age'
+'location'
+
