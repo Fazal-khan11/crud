@@ -1,29 +1,3 @@
-<?php
-
-include ('conn.php');
-if(isset($_POST['submit'])){
-   
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$mobile_no = $_POST['mobile_no'];
-$email = $_POST['email'];
-$age = $_POST['age'];
-$location= $_POST['location'];
-
-$sql = "INSERT INTO `users` (`first_name`, `last_name`, `mobile_no`, `email`, `age`, `location`) 
-VALUES ('$first_name', '$last_name', '$mobile_no', '$email', '$age', '$location')";
-if ($conn->query($sql) === !TRUE) {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-} else {
-    echo "New record created successfully";
-}
-
-$conn->close();
-}
-   
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,18 +10,18 @@ $conn->close();
 <body>
     
     <div class="col-lg-6 m-auto">
-        <form action="" method="post">
+        <form action="register.php" method="post">
            <br><br><div class="card container">
            <br><div class="card-header bg-dark">
                    
                    <h1 class="text-white text-center">Add To Contact List</h1>
                </div>
                <br>
-               <label for="first_name">First Name</label>
+               <label for="first_name">Name</label>
                
-               <input type="text" name="first_name"  class="form-control" placeholder="Enter First Name"><br>
-               <label for="last_name">Last Name</label>
-               <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name"><br>
+               <input type="text" name="first_name"  class="form-control" placeholder="Enter Name"><br>
+               <label for="last_name">Password</label>
+               <input type="password" name="password" class="form-control" placeholder="Enter Password"><br>
                <label for="Mobile Number">Mobile Number</label>
                <input type="number" name="mobile_no" class="form-control" placeholder="Enter Mobile Number"><br>
                <label for="email">E-Mail</label>

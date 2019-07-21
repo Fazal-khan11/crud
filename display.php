@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['email']))
+header('location:login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +14,17 @@
 </head>
 <body>
     <div class="container">
+    <br><br>
+    <h2 class="text-center text-success">Welcome <?php echo $_SESSION['email']; ?> </h2>
+    <a href="logout.php" class="btn btn-warning pull-right" > Logout </a>
+    <br><br>
         <div class="col-lg-12">
             <h1 class="text-warning text-center">My Contact List</h1>
             <table class="table table-striped table-hover table-bordered">
                 <tr class="bg-dark text-white text-center">
                     <td> ID </td>
                     <td> First Name </td>
-                    <td> Last Name </td>
+                    <td> Password </td>
                     <td> Mobile No </td>
                     <td> E-Mail </td>
                     <td> Age </td>
@@ -41,7 +49,7 @@ $query = mysqli_query($conn,$sql);
                 <tr class="text-center">
                     <td> <?php echo $result['id']; ?> </td>
                     <td> <?php echo $result['first_name']; ?>  </td>
-                    <td> <?php echo $result['last_name']; ?> </td>
+                    <td> <?php echo $result['password']; ?> </td>
                     <td> <?php echo $result['mobile_no']; ?>  </td>
                     <td> <?php echo $result['email']; ?>  </td>
                     <td> <?php echo $result['age']; ?>  </td>

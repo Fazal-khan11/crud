@@ -1,0 +1,13 @@
+CREATE DATABASE crud;
+
+CREATE TABLE `accounts`.`users` 
+(
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `first_name` VARCHAR(50) NOT NULL,
+     `password` VARCHAR(50) NOT NULL,
+    `mobile_no` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100) NOT NULL,
+    `age` INT(100) NOT NULL,
+    `location` VARCHAR(100) NOT NULL,
+PRIMARY KEY (`id`) 
+);
